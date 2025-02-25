@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as the base image
-FROM node:16-alpine
+FROM node:18-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -20,7 +20,7 @@ RUN npm run build
 RUN npm install -g serve
 
 # Expose the port that Vite runs on
-EXPOSE 5173
+EXPOSE 80
 
 # Command to serve the production build
-CMD ["serve", "-s", "dist", "-l", "5173"]
+CMD ["serve", "-s", "dist", "-l", "80"]
